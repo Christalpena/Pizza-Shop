@@ -1,0 +1,34 @@
+body{
+    background-color: rgb(65, 61, 61);
+    
+
+}
+
+.image{
+    width: 100%;
+    height: 38rem;
+    
+}
+
+.nav-inf{
+    height: 4rem;
+    background-color: rgb(40, 40, 40);
+
+    color: white;
+    padding-top: 1rem;
+}
+
+.category-container{
+    padding: 3rem;
+    background-color: rgb(40, 40, 40);
+    color: white;
+
+}
+
+.pizza-types{
+    color: red;
+    font-size:medium;
+    font-weight: 500;
+    text-decoration: none;
+
+}
