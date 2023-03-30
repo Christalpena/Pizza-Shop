@@ -1,0 +1,41 @@
+{% extends 'mainpage/fathertemplate.html' %}   
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div>
+
+        <section style="margin-top: 1rem;" >
+        {% if data %}
+
+            {% for data in data %}
+            <div style="display: inline-block; margin-bottom: 1rem;" >
+                <div class="card" style="width: 18rem;">
+                    <img style="height: 15rem;" src="{{data.image.url}}"  class="card-img-top" alt="...">
+                    <div class="card-body" style="height: 10rem;">
+                    <h5 class="card-title">{{data.name}} </h5>
+                    <h5>Price: {{data.price}} $</h5>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>NO HAY PIZZA</p>
+        {% endif %}
+
+        </section>
+
+    </div>
+    {% endblock %}
+    
+</body>
+</html>
