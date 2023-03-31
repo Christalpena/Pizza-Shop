@@ -12,6 +12,16 @@
 <body>
     {% block content %}
     <div>
+        <section style="float: left; margin: 0% 3rem; ">
+            <div class="category-container">
+                <p><a style="text-decoration: none;color: white;" href="{% url 'pizzas' %}"> <--All--> </a></p>
+                <strong style="font-size: x-large;">CATEGORIES</strong>
+                {% for ctg in ctg %}
+                    <p><a class="pizza-types" href="{% url 'category' ctg.id %}">{{ctg.categories}}</a></p>
+                {% endfor %}
+            </div>
+
+        </section>
 
         <section style="margin-top: 1rem;" >
         {% if data %}
