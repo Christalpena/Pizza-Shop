@@ -18,13 +18,29 @@ body{
     padding-top: 1rem;
 }
 
-.category-container{
+.table{
     padding: 3rem;
     background-color: rgb(40, 40, 40);
     color: white;
     height: 100%;
+    overflow: auto;
 
 }
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.category-container{
+    padding: 3rem;
+    background-color: rgb(40, 40, 40);
+    color: white;
+    overflow: auto;
+    
+
+}
+
 
 .pizza-types{
     color: red;
