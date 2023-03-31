@@ -6,7 +6,6 @@ from . import models
 def pizzas(request):
     data = models.Pizza.objects.all()
     ctg = models.Category.objects.all()
-
     return render (request,'PizzasApp/pizzas.html',{'data':data,'ctg':ctg})
 
 def category(request,id):

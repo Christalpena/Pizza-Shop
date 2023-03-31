@@ -21,7 +21,5 @@ urlpatterns = [
     path('',include('HomeApp.urls')),
     path('pizzas/',include('PizzaApp.urls')),
     path('Beverages/',include('BeveragesApp.urls')),
-
-
-
+    path('cart/',include('Cart.urls'))
 ]

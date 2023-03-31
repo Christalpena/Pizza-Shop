@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'HomeApp',
     'PizzaApp',
-    'BeveragesApp'
+    'BeveragesApp',
+    'Cart'
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'Cart.context_processor.import_total_cart'
+
             ],
         },
     },
