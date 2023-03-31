@@ -2,10 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-from django.db import models
-# Create your models here.
-
-
 class Category(models.Model):
     categories = models.CharField(max_length=30) 
     created = models.DateTimeField(auto_now_add=True)
