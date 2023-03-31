@@ -12,13 +12,13 @@
 <body>
     {% block content %}
     <div>
-        <div style="float: right; margin-right: 3rem;margin-left: 2rem;" class="cart">
+        <div style="float: right; margin-right: 3rem;" class="cart">
             {% include "cart/widget.html" %}
 
         </div>
         <section style="float: left; margin: 0% 3rem; ">
             <div class="category-container">
-                <p><a style="text-decoration: none;color: white;" href="{% url 'pizzas' %}"> <--All--> </a></p>
+                <p><a style="text-decoration: none;color: white;" href="{% url 'beverages' %}"> <--All--> </a></p>
                 <strong style="font-size: x-large;">CATEGORIES</strong>
                 {% for ctg in ctg %}
                     <p><a class="pizza-types" href="{% url 'category' ctg.id %}">{{ctg.categories}}</a></p>
@@ -31,20 +31,21 @@
         {% if data %}
 
             {% for data in data %}
-            <div style="display: inline-block; margin-bottom: 1rem;" class="clearfix" >
+            <div style="display: inline-block; margin-bottom: 1rem;" >
                 <div class="card" style="width: 18rem;">
                     <img style="height: 15rem;" src="{{data.image.url}}"  class="card-img-top" alt="...">
                     <div class="card-body" style="height: 10rem;">
                     <h5 class="card-title">{{data.name}} </h5>
                     <h5>Price: {{data.price}} $</h5>
-
                     <a href="{% url 'cart:add' data.name %}" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
             {% endfor %}
         {% else %}
-            <p>NO HAY PIZZA</p>
+            <div >
+                <p style="margin: auto;">NO HAY PIZZA</p>
+            </div>
         {% endif %}
 
         </section>
