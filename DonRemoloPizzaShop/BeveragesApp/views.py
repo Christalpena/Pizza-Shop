@@ -5,4 +5,12 @@ from . import models
 
 def beverages(request):
     data = models.Beverage.objects.all()
-    return render (request,'PizzasApp/pizzas.html',{'data':data})
+    ctg = models.Category.objects.all()
+
+    return render (request,'PizzasApp/pizzas.html',{'data':data,'ctg':ctg})
+
+def category(request,id):
+    data = models.Category.objects.get(id = id)
+    data = models.Beverage.objects.filter(category = data)
+    ctg = models.Category.objects.all()
+    return render(request,'PizzasApp/pizzas.html',{'data':data,'ctg':ctg})
