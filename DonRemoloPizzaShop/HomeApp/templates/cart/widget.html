@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table table-bordered" style="color: white;">
+        <thead>
+            <tr>
+                <th colspan="3" class="text-center">
+                    Shop Cart
+                </th>
+            </tr>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if request.session.cart.items %}
+                {% for key, value in request.session.cart.items %}
+                <tr class="text-center">
+                    <td style="font-weight: 500;
+                    ">{{value.name}} <br>R${{value.price}} </td>
+                    <td style="color: red;font-weight: 500;">{{value.quantity}} </td>
+                    
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'cart:add' value.name %}">+</a>
+                        <a class="btn btn-primary" href="{% url 'cart:subtract' value.name %}">-</a><br>
+                        
+                    </td>
+                </tr>
+
+                {% endfor %}
+            {% else %}
+
+                <tr>
+                    <td colspan="3">
+                        <div class="alert alert-danger text-center">
+                            Without products
+                        </div>
+                    </td>
+                </tr>
+            {% endif %}
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    Total: {{import_total_cart}}
+                    {% if request.session.cart.items %}
+                        <a href="{% url 'cart:form' request.path %}" style="margin-left: 50px;" class="btn btn-primary">Buy</a>
+                    {% endif %}
+                </td>
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+</html>

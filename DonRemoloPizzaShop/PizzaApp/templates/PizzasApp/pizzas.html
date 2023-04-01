@@ -1,0 +1,66 @@
+{% extends 'mainpage/fathertemplate.html' %}   
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div>
+        {% if "valid" in request.GET %}
+        <div style="margin-top: 0.5rem;">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Your order was send</strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+        </div>
+
+        {% endif %}
+
+        <div style="float: right; margin-right: 3rem;margin-left: 2rem;" class="cart">
+            {% include "cart/widget.html" %}
+
+        </div>
+        <section style="float: left; margin: 0% 3rem; height: 100%; ">
+            <div class="category-container">
+                <p><a style="text-decoration: none;color: white;" href="{% url 'pizzas' %}"> <--All--> </a></p>
+                <strong style="font-size: x-large;">CATEGORIES</strong>
+                {% for ctg in ctg %}
+                    <p><a class="pizza-types" href="{% url 'category' ctg.id %}">{{ctg.categories}}</a></p>
+                {% endfor %}
+            </div>
+
+        </section>
+
+        <section style="margin-top: 1rem;" >
+        {% if data %}
+
+            {% for data in data %}
+            <div style="display: inline-block; margin-bottom: 1rem;" class="clearfix" >
+                <div class="card" style="width: 18rem;">
+                    <img style="height: 15rem;" src="{{data.image.url}}"  class="card-img-top" alt="...">
+                    <div class="card-body" style="height: 10rem;">
+                    <h5 class="card-title">{{data.name}} </h5>
+                    <h5>Price: {{data.price}} $</h5>
+
+                    <a href="{% url 'cart:add' data.name %}" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>NO HAY PIZZA</p>
+        {% endif %}
+
+        </section>
+
+    </div>
+    {% endblock %}
+    
+</body>
+</html>
