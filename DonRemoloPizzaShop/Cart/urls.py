@@ -8,6 +8,7 @@ urlpatterns = [
     path('subtract/<str:product_name>/',views.subtract_product, name='subtract'),
     path('delete/<str:product_name>/',views.delete_product, name = 'delete'),
     path('clean/',views.clean_car, name = 'clean'),
+    path('form<path:path>',views.form,name = "form"),
 
 
 ]

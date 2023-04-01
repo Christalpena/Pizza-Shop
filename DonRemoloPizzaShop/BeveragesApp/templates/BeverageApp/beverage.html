@@ -12,11 +12,21 @@
 <body>
     {% block content %}
     <div>
+        {% if "valid" in request.GET %}
+        <div style="margin-top: 0.5rem;">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Your order was send</strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+        </div>
+
+        {% endif %}
+
         <div style="float: right; margin-right: 3rem;" class="cart">
             {% include "cart/widget.html" %}
 
         </div>
-        <section style="float: left; margin: 0% 3rem; ">
+        <section style="float: left; margin: 0% 3rem;">
             <div class="category-container">
                 <p><a style="text-decoration: none;color: white;" href="{% url 'beverages' %}"> <--All--> </a></p>
                 <strong style="font-size: x-large;">CATEGORIES</strong>
@@ -37,7 +47,7 @@
                     <div class="card-body" style="height: 10rem;">
                     <h5 class="card-title">{{data.name}} </h5>
                     <h5>Price: {{data.price}} $</h5>
-                    <a href="{% url 'cart:add' data.name %}" class="btn btn-primary">Go somewhere</a>
+                    <a href="{% url 'cart:add' data.name %}" class="btn btn-primary">Add</a>
                     </div>
                 </div>
             </div>

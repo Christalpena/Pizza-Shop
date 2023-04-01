@@ -1,0 +1,40 @@
+{% extends 'mainpage/fathertemplate.html' %}   
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <section style="margin-top: 2rem;">
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <div style=" width: 40%;margin: auto;background-color: white;padding: 8rem;border-radius: 10px;">
+                <div class="container-fluid">
+                    <img class="img-fluid" src="https://static.vecteezy.com/ti/vecteur-libre/t2/966017-ensemble-de-pizzas-variees-gratuit-vectoriel.jpg" alt="">
+                </div>
+
+
+                <p style="margin-top: 5rem; margin-bottom: 4rem;">
+                    <p style="color: #ff9800;font-size: xx-large;font-weight: 700" >Enter your information</p>
+                    {{form.as_p}}
+                </p>
+                <button class="btn btn-primary">Confirm order</button>
+                <button class="btn btn-primary"><a style="text-decoration: none;color: white;" href="{% url 'pizzas' %}">Cancel</a></button>
+
+
+    
+            </div>
+        </form>
+
+    </section>
+
+    {% endblock %}
+</body>
+</html>
