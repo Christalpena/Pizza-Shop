@@ -36,9 +36,7 @@ body{
     padding: 3rem;
     background-color: rgb(40, 40, 40);
     color: white;
-    overflow: auto;
     
-
 }
 
 
@@ -58,6 +56,15 @@ body{
     font-size: x-large;
     font-weight: 600;
     color: white;
+}
+
+.alert{
+    color: white;
+    background-color: red;
+    border-color: transparent;
+    width: 50rem;
+    margin: auto;
+    text-align: center;
 }
 
 .history p{
