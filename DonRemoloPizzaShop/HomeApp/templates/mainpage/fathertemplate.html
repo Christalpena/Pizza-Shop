@@ -8,7 +8,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{% static 'pizzashop/css/pizzashop.css' %}?5.9" media="all">
+    <link rel="stylesheet" href="{% static 'pizzashop/css/pizzashop.css' %}?6.7" media="all">
 
 
 
@@ -25,7 +25,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary" >
         <div class="container-fluid nav-content">
-          <a class="navbar-brand" href="{% url 'mainpage' %}"><div class="container">
+          <a class="navbar-brand" href="{% url 'mainpage' %}"><div class="container" style="font-weight: 600;font-size: x-large;">
       
                 <img src="https://img.favpng.com/6/4/15/pizza-take-out-fast-food-computer-icons-menu-png-favpng-QS2m3SXsuWLNMNNTyYJHKapi1.jpg" alt="Bootstrap" width="70" height="44">Don Remolo Pizza-Shop
            
@@ -36,7 +36,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'mainpage' %}">Home</a>
+                <a class="nav-link" aria-current="page" href="{% url 'mainpage' %}">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'pizzas' %}">Pizzas</a>
@@ -45,10 +45,7 @@
                 <a class="nav-link" href="{% url 'beverages' %}">Beverages</a>
               </li> 
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" style="border-radius: 0%;" type="search" placeholder="Search" aria-label="Search">
-              <button style="border-radius: 0%;" class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+
           </div>
         </div>
       </nav>
