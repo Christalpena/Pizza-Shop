@@ -1,6 +1,6 @@
 # Pizza-Shop
 
-[Control de Versiones.pdf](https://github.com/Christalpena/Pizza-Shop/files/11128567/Control.de.Versiones.pdf)
+La tarea teorica esta en pdf se llama Control de Versiones.
 
 ![Screenshot 2023-04-01 020147](https://user-images.githubusercontent.com/107286072/229268740-41149da8-1d5f-4e2b-bbe6-02dc159327da.png)
 
