@@ -30,6 +30,7 @@ body{
     background-color: rgb(40, 40, 40);
     color: white;
     margin-bottom: 3rem;
+    margin: 1rem;
     
 }
 
@@ -56,7 +57,7 @@ body{
     color: white;
     background-color: red;
     border-color: transparent;
-    width: 50rem;
+    width: 90rem;
     margin: auto;
     text-align: center;
 }
