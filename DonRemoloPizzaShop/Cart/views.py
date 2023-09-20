@@ -71,15 +71,23 @@ def form(request,path):
             user_email = request.POST.get('Gmail')
             cart = Cart(request)
             data = cart.Product_list()
-            for data in data:
-                data = "{} \n".format(data)
+
+            product_list = []
+            for i in data:
+                product = i[1]
+                product_list.append("Product: {} | Quantity {} | Price {}\n".format(product['name'], product["quantity"], product["price"]))
+
+            # Unir la lista de productos en una sola cadena con saltos de línea
+            product_list_str = ''.join(product_list)
 
             email = EmailMessage(
                 "ORDER FROM PIZZA_APP",
-                "From: {} \n ORDER: {}".format(user_email,data),"",
+                "From: Don Remolo PizzaShop \nORDER:\n{}".format(product_list_str),
+                "",
                 ['penaperezchristal@gmail.com'],
                 reply_to=[user_email]
             )
+
             try:
                 email.send()
                 if path == "/pizzas/":
